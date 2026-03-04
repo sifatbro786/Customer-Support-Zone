@@ -3,9 +3,9 @@ import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ticketsData from "./data/tickets.js";
-import toast from "daisyui/components/toast/index.js";
 import TicketList from "./components/TicketList.jsx";
 import TaskStatus from "./components/TaskStatus.jsx";
+import { toast } from "react-toastify";
 
 function App() {
     const [tickets, setTickets] = useState(ticketsData);
@@ -30,17 +30,17 @@ function App() {
     };
 
     return (
-        <>
+        <div className="bg-base-300">
             <Navbar />
             <Banner inProgress={taskStatus.length} resolved={resolved.length} />
 
-            <div className="flex flex-col lg:flex-row gap-6 px-4 md:px-10 pt-10 pb-20">
+            <div className="flex flex-col lg:flex-row gap-8 px-4 md:px-10 pt-10 pb-20">
                 <TicketList tickets={tickets} onAdd={handleAddTask} />
                 <TaskStatus tasks={taskStatus} resolved={resolved} onComplete={handleComplete} />
             </div>
 
             <Footer />
-        </>
+        </div>
     );
 }
 
