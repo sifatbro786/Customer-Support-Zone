@@ -34,7 +34,7 @@ function App() {
             <Navbar />
             <Banner inProgress={taskStatus.length} resolved={resolved.length} />
 
-            <div className="flex flex-col lg:flex-row gap-8 px-4 md:px-10 pt-10 pb-20">
+            <div className="flex flex-col lg:flex-row gap-8 px-4 md:px-10 pt-10 pb-14 sm:pb-20">
                 <TicketList tickets={tickets} onAdd={handleAddTask} />
                 <TaskStatus tasks={taskStatus} resolved={resolved} onComplete={handleComplete} />
             </div>
